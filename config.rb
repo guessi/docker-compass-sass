@@ -12,3 +12,6 @@ output_style = :expanded
 relative_assets = false
 line_comments = false
 preferred_syntax = :scss
+
+# encoding
+Encoding.default_external = "utf-8"
