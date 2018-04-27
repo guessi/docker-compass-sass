@@ -1,0 +1,20 @@
+#!/bin/sh
+
+BUILD_BASE="/opt/workdir"
+
+# make sure we are running in correct folder
+cd ${BUILD_BASE}
+  # workaround: copy *.scss from docker volume
+  cp -r /opt/sass/* ${BUILD_BASE}/sass/
+
+  # ensure *.scss format is compatible
+  sass-convert \
+    --recursive \
+    --from scss \
+    --to scss \
+    --no-cache \
+    --in-place \
+    sass
+
+  # convert *.scss to *.css
+  compass compile --no-line-comments
