@@ -21,20 +21,11 @@ Execute helper script
 
     $ ./docker-compass
 
-Or run with Docker directly
-
-    $ docker run --rm --privileged         \
-        -v $(pwd)/sass:/opt/sass:ro        \
-        -v $(pwd)/css:${BUILD_BASE}/css:rw \
-        -t guessi/compass-sass             \
-          ./sass-convert
-
 Find the output css in `css` directory
 
 ## Keep the image size as small as possible
 
-    $ docker image ls compass-sass
+    $ docker image ls guessi/compass-sass
 
     REPOSITORY            TAG      IMAGE ID      CREATED              SIZE
-    guessi/compass-sass   latest   4b0ba85345b0  About a minute ago   167MB
-
+    guessi/compass-sass   latest   bd879349cdf6  About a minute ago   164MB

@@ -1,7 +1,6 @@
-#!/bin/sh
+#!/bin/sh -e
 
 docker run --rm --privileged        \
   -v $(pwd)/sass:/opt/sass:ro       \
   -v $(pwd)/css:/opt/workdir/css:rw \
-  -t guessi/compass-sass            \
-  ./sass-convert
+  guessi/compass-sass

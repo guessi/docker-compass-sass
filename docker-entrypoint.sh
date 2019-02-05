@@ -1,11 +1,9 @@
-#!/bin/sh
-
-BUILD_BASE="/opt/workdir"
+#!/bin/sh -e
 
 # make sure we are running in correct folder
-cd ${BUILD_BASE}
+cd /opt/workdir
   # workaround: copy *.scss from docker volume
-  cp -r /opt/sass/* ${BUILD_BASE}/sass/
+  cp -r /opt/sass/* /opt/workdir/sass/
 
   # ensure *.scss format is compatible
   sass-convert \
